@@ -27,7 +27,7 @@
 #include "btrtl.h"
 #include "btmtk.h"
 
-#define VERSION "0.8"
+#define VERSION "0.8.2"
 
 static bool disable_scofix;
 static bool force_scofix;
@@ -570,7 +570,10 @@ static const struct usb_device_id blacklist_table[] = {
 	{ USB_DEVICE(0x043e, 0x3109), .driver_info = BTUSB_MEDIATEK |
 						     BTUSB_WIDEBAND_SPEECH |
 						     BTUSB_VALID_LE_STATES },
-
+/* Additional MediaTek MT7922 Bluetooth devices (Asus Zenbook UM3402) */
+	{ USB_DEVICE(0x7922, 0x14c3), .driver_info = BTUSB_MEDIATEK |
+						     BTUSB_WIDEBAND_SPEECH |
+						     BTUSB_VALID_LE_STATES },
 	/* Additional MediaTek MT7921 Bluetooth devices */
 	{ USB_DEVICE(0x0489, 0xe0c8), .driver_info = BTUSB_MEDIATEK |
 						     BTUSB_WIDEBAND_SPEECH |
